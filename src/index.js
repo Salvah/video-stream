@@ -4,13 +4,16 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
+  console.log("oi");
   res.send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
       <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="favicon.png" />
         <title>Videostream</title>
       </head>
       <body>
