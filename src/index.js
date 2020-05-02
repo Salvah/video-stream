@@ -4,8 +4,6 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.static("public"));
-
 app.get("/", (req, res) => {
   console.log("oi");
   res.send(`
@@ -13,7 +11,7 @@ app.get("/", (req, res) => {
     <html lang="pt-BR">
       <head>
         <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="favicon.png" />
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
         <title>Videostream</title>
       </head>
       <body>
