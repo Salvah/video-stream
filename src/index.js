@@ -85,6 +85,6 @@ app.get("/video/:name", (req, res) => {
   //   stream.on("error", (streamErr) => res.end(streamErr));
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("server is runnig");
 });
