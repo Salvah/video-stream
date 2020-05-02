@@ -65,13 +65,13 @@ app.get("/", (req, res) => {
       <input type="radio" name="video" value="file3.mp4" /> File 3
       <br />
       <video
-        src="http://localhost:3000/video/file1.mp4"
+        src="https://video-stream-njs.herokuapp.com/video/file1.mp4"
         type="video/mp4"
         controls
       ></video>
 
       <script>
-        const base = 'http://localhost:3000/video/';
+        const base = "https://video-stream-njs.herokuapp.com/video/";
         const video = document.querySelector("video");
         const options = document.querySelectorAll("input");
         options.forEach((option) =>
