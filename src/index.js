@@ -5,7 +5,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  console.log("oi");
+  res.status(200).send("Hello");
+  return;
   res.send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
