@@ -4,6 +4,44 @@ const express = require("express");
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Videostream</title>
+      </head>
+      <body>
+      <input type="radio"  checked name="video" value="file1.mp4" /> File 1
+    <input type="radio" name="video" value="file2.mp4" /> File 2
+    <input type="radio" name="video" value="file3.mp4" /> File 3
+    <br />
+    <video
+      src="http://localhost:3000/video/file1.mp4"
+      type="video/mp4"
+      controls
+    ></video>
+
+    <script>
+      const base = 'http://localhost:3000/video/';
+      const video = document.querySelector("video");
+      const options = document.querySelectorAll("input");
+      options.forEach((option) =>
+        option.addEventListener("click", function () {
+          video.src = base + this.value;
+          video.play();
+        })
+      );
+      video.onerror = () => {
+        alert("Vídeo não encontrado!");
+      };
+    </script>
+      </body>
+    </html>
+    `);
+});
 app.get("/video/:name", (req, res) => {
   const { name } = req.params;
 
